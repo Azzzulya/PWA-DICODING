@@ -36,7 +36,7 @@ function loveTeam(data, storeNameTeam){
 
 function removeLovedTeam(ID, storeNameTeam) {
   console.log(ID + " " + storeNameTeam);
-  let imSure = confirm(`Apakah Anda Yakin ingin menghapus ${name} dari Bookmark ?`)
+  let imSure = confirm(`Are you sure, you want remove this data from loved club ?`)
   if(imSure){
     cekDatabase(idb)
         .then(function(db) {

@@ -1,6 +1,6 @@
 const base_url = "https://api.football-data.org/v2";
 const api_token = "5b901ffb303f4ae78a3c64e253a5a278";
-const leagueID = 2021;
+const leagueID = 2015;
 
 const endpoint_standings = `${base_url}/competitions/${leagueID}/standings`;
 const endpoint_teams = `${base_url}/competitions/${leagueID}/teams`;

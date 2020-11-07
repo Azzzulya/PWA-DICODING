@@ -11,14 +11,7 @@ function getResultStandingsJSON(data) {
           tableDataStanding += `
               <tr>
                   <td class="center-align">${team.position}</td>
-                  <td>
-                      <a href="./detailTeam.html?id=${team.team.id}">
-                          <p style="display: flex; align-items: center;">
-                              <img class="materialboxed" style="float:left; margin-right:20px" width="50" height="50" src="${team.team.crestUrl}">
-                              ${team.team.name}
-                          </p>
-                      </a>
-                  </td>
+                  <td>${team.team.name}</td>
                   <td class="center-align">${team.playedGames}</td>
                   <td class="center-align">${team.won}</td>
                   <td class="center-align">${team.draw}</td>
