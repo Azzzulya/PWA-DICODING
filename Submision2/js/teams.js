@@ -5,43 +5,22 @@ function getResultTeamsJSON(data){
     var tableDataStanding = " ";
     team = JSON.parse(JSON.stringify(teams).replace(/^http:\/\//i, 'https://'));  
    
-    tableDataStanding += 
-    `
-    <div class="col s12 m6 l4">
-      <div class="card">
-       <div class="card-content row valign-wrapper">
-        <div class="col s4" class="logo-team">
-          <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="80%" >
-        </div>
-        <div class="col s8 information-team">
-          <span class="badge-blue"><strong>${team.name}</strong></span>
-          <span>${team.venue}</span>
-        </div>
-       </div>
-      <div class="card-action right-align">
-          <a href="${team.website}" target="_blank" class="website-action">WEBSITE</a>
-
-          <a href="./detailTeam.html?id=${team.id}" class="waves-effect waves-light btn orange accent-3">See More</a>
-      </div>
-      </div>
-    </div>
-    `
     tableTeamsHtml += 
     `
     <div class="col s12 m6 l4">
-     <div class="card">
-       <div class="card-content row valign-wrapper">
+     <div class="card" style="max-height: max-height: 600px;">
+       <div class="card-content row valign-wrapper" style=" min-height: 140px;">
           <div class="col s4" class="logo-team">
-              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="80%" >
-                    </div>
-                    <div class="col s8 information-team">
+              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="100%" >
+                </div>
+                <div class="col s8 information-team">
                     <span class="badge-blue"><strong>${team.name}</strong></span>
+                    <br>
                     <span>${team.venue}</span>
                     </div>
-          </div>
-       <div class="card-action right-align">
-          <a href="${team.website}" target="_blank" class="website-action float-left">WEBSITE</a>
-          <a href="./detailTeam.html?id=${team.id}" class="waves-effect waves-light btn orange accent-3 float-right">See More</a>
+        </div>
+        <div class="card-action right-align">
+          <a href="./detailTeam.html?id=${team.id}" class="waves-effect waves-light btn indigo darken-4  float-right">See More</a>
         </div>
       </div>
     </div>
@@ -120,7 +99,7 @@ function getResultTeamFavoritesJSON(data) {
       <div class="card">
       <div class="card-content row valign-wrapper">
           <div class="col s4" class="logo-team">
-              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="50%" >
+              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="80%" >
           </div>
           <div class="col s8 information-team">
           <h3 class="badge-blue"><strong>${team.name}</strong></h3>
@@ -128,7 +107,6 @@ function getResultTeamFavoritesJSON(data) {
           </div>
       </div>
       <div class="card-action right-align">
-          <a href="${team.website}" target="_blank" class="website-action">WEBSITE</a>
           <a class="waves-effect waves-light btn-small red" onclick="removeLovedTeam(${team.id}, 'loved_team')">
               Remove
           </a>
@@ -138,10 +116,6 @@ function getResultTeamFavoritesJSON(data) {
     `;
   });
 
-  // tableTeamFavoriteHtml += `
-  //         </tbody>
-  //     </table>
-  // `;
   document.getElementById('progress').style.display = 'none'
   document.getElementById("lovedTeams").innerHTML = tableTeamFavoriteHtml;
 }

@@ -117,7 +117,7 @@ function getTeamsDetail(teamID) {
 
 
 function getLove() {
-  getAllFavorites(storeNameTeam).then(function(data) {
+  getFavorites(storeNameTeam).then(function(data) {
     getResultTeamFavoritesJSON(data);
   });
 }

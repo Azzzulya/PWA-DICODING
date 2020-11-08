@@ -9,9 +9,10 @@
     "gcm_sender_id": "78319278976",
     "icons": [
         {
-            "src": "icon.png",
+            "src": "ligue-one.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }

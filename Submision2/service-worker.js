@@ -14,9 +14,10 @@ var urlsToCache = [
   "/js/api.js",
   "/js/db.js",
   "/js/idb.js",
+  "/js/klasmen.js",
   "/js/teams.js",
   "/js/regisandrequest.js",
-  "/icon.png"
+  "/ligue-one.png"
 ];
 
 self.addEventListener("install", function(event) {

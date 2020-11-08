@@ -1,5 +1,5 @@
 function cekDatabase(idb) {
-  var dbPromised = idb.open("epl", 1, function(upgradeDb){
+  var dbPromised = idb.open("League-One", 1, function(upgradeDb){
     if(!upgradeDb.objectStoreNames.contains(storeNameTeam)){
       var teamsObjectStore = upgradeDb.createObjectStore(storeNameTeam, {
         keypath: "id"
@@ -72,7 +72,7 @@ function getById(ID, storeNameTeam) {
   });
 }
 
-function getAllFavorites(storeNameTeam) {
+function getFavorites(storeNameTeam) {
   return new Promise(function(resolve, reject) {
       cekDatabase(idb)
           .then(function(db) {
