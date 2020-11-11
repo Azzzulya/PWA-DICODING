@@ -1,8 +1,10 @@
 function getResultTeamsJSON(data){
   var tableTeamsHtml = " ";
-
-  data.teams.forEach(function(team){
-    team = JSON.parse(JSON.stringify(teams).replace(/^http:\/\//i, 'https://'));  
+  data = data.teams;
+  data.forEach(function(team){
+    // team = JSON.parse(JSON.stringify(teams).replace(/^http:\/\//i, 'https://'));  
+    var TeamImage = team.crestUrl
+    TeamImage = TeamImage.replace(/^http:\/\//i, 'https://')
    
     tableTeamsHtml += 
     `
@@ -10,7 +12,7 @@ function getResultTeamsJSON(data){
      <div class="card" style="max-height: max-height: 600px;">
        <div class="card-content row valign-wrapper" style=" min-height: 140px;">
           <div class="col s4" class="logo-team">
-              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="100%" >
+              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="100%" >
                 </div>
                 <div class="col s8 information-team">
                     <span class="badge-blue"><strong>${team.name}</strong></span>
@@ -31,7 +33,9 @@ function getResultTeamsJSON(data){
 }
 
 function getResultTeamInfoJSON(data){
-  data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//i, 'https://'));
+  // data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//i, 'https://'));
+  var TeamImage = data.crestUrl
+    TeamImage = TeamImage.replace(/^http:\/\//i, 'https://')
 
     var tableOverviewHtml = "";
 
@@ -78,7 +82,7 @@ function getResultTeamInfoJSON(data){
         </tr>
     `;
 
-    document.getElementById("crestUrl").src = data.crestUrl;
+    document.getElementById("crestUrl").src = TeamImage;
     document.getElementById("nameHeader").innerHTML = data.name;
     document.getElementById("preloader").innerHTML = "";
     document.getElementById("tableOverview").innerHTML = tableOverviewHtml;
@@ -86,18 +90,21 @@ function getResultTeamInfoJSON(data){
 
 
 function getResultTeamFavoritesJSON(data) {
-  data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//i, 'https://'));
-  console.log("loved", data)
+  // data = JSON.parse(JSON.stringify(data).replace(/^http:\/\//i, 'https://'));
+  // console.log("loved", data)
   var tableTeamFavoriteHtml = "";
 
   data.forEach(function(team) {
+    var TeamImage = team.crestUrl
+    TeamImage = TeamImage.replace(/^http:\/\//i, 'https://')
+
       tableTeamFavoriteHtml += 
       `
       <div class="col s12">
       <div class="card">
       <div class="card-content row valign-wrapper">
           <div class="col s4" class="logo-team">
-              <img src="${team.crestUrl}" alt="${team.name}" class="responsive-img center-align" width="80%" >
+              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="80%" >
           </div>
           <div class="col s8 information-team">
           <h3 class="badge-blue"><strong>${team.name}</strong></h3>

@@ -41,7 +41,6 @@ function getStandings() {
               if (response) {
                   response.json().then(function(data) {
                       getResultStandingsJSON(data);
-                    //   console.log(data)
                       resolve(data);
                   });
               }
@@ -52,7 +51,6 @@ function getStandings() {
           .then(status)
           .then(json)
           .then(function(data) {
-            //   console.log(data)
               getResultStandingsJSON(data);
               resolve(data);
           })
@@ -69,7 +67,6 @@ function getTeams() {
                 if (response) {
                     response.json().then(function(data) {
                         getResultTeamsJSON(data);
-                        console.log(data)
                         resolve(data);
                     });
                 }
@@ -80,7 +77,6 @@ function getTeams() {
         .then(status)
         .then(json)
         .then(function(data) {
-            console.log(data)
             getResultTeamsJSON(data);
             resolve(data);
         })
