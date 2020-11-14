@@ -12,7 +12,7 @@ function getResultTeamsJSON(data){
      <div class="card" style="max-height: max-height: 600px;">
        <div class="card-content row valign-wrapper" style=" min-height: 140px;">
           <div class="col s4" class="logo-team">
-              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="100%" >
+              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="100%" height="100%">
                 </div>
                 <div class="col s8 information-team">
                     <span class="badge-blue"><strong>${team.name}</strong></span>
@@ -102,7 +102,7 @@ function getResultTeamFavoritesJSON(data) {
       <div class="card">
       <div class="card-content row valign-wrapper">
           <div class="col s4" class="logo-team">
-              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="80%" >
+              <img src="${TeamImage}" alt="${team.name}" class="responsive-img center-align" width="80%" height="100%" >
           </div>
           <div class="col s8 information-team">
           <h3 class="badge-blue"><strong>${team.name}</strong></h3>

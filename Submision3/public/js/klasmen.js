@@ -10,7 +10,7 @@ function getResultStandingsJSON(data) {
                 <tr>
                     <td>${team.position}</td>
                     <td center-align>
-                      <img src="${TeamImage}" alt="${team.team.name}" class="responsive-img center-align" width="30" >
+                      <img src="${TeamImage}" alt="${team.team.name}" class="responsive-img center-align" width="30" height="50">
                     </td>
                     <td>${team.team.name}</td>
                     <td>${team.playedGames}</td>
